@@ -2,12 +2,12 @@ spring:
   sql:
     init:
       mode: always
-      schema-locations: classpath:org/springframework/batch/core/schema-drop-postgresql.sql
+      schema-locations: classpath:org/springframework/batch/core/schema-drop-mysql.sql
   batch:
     jdbc:
       initialize-schema: always
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mariadb://localhost:3306/batch_db
+    driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: password
